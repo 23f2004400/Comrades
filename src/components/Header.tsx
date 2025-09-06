@@ -4,9 +4,10 @@ import { Shield, Menu, X } from 'lucide-react';
 interface HeaderProps {
   currentPage: string;
   setCurrentPage: (page: string) => void;
+  onAuthClick: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
+const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage, onAuthClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
@@ -29,7 +30,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
               <Shield className="h-6 w-6 text-white" />
             </div>
             <span className="text-xl font-bold text-gray-800 group-hover:text-pink-400 transition-colors duration-300 font-poppins">
-              SafeGuard
+              Comrade
             </span>
           </div>
 
@@ -51,7 +52,10 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
           </nav>
 
           {/* CTA Button */}
-          <button className="hidden md:block bg-gradient-to-r from-pink-400 to-coral-400 text-white px-6 py-2 rounded-full font-medium hover:scale-105 hover:shadow-pink transition-all duration-300 font-montserrat">
+          <button 
+            onClick={onAuthClick}
+            className="hidden md:block bg-gradient-to-r from-pink-400 to-coral-400 text-white px-6 py-2 rounded-full font-medium hover:scale-105 hover:shadow-pink transition-all duration-300 font-montserrat"
+          >
             Login/SignUp
           </button>
 
@@ -83,8 +87,14 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
                 {item.label}
               </button>
             ))}
-            <button className="w-full mt-4 mx-4 bg-gradient-to-r from-pink-400 to-coral-400 text-white py-2 rounded-full font-medium hover:scale-105 transition-transform duration-300 font-montserrat">
-              Download App
+            <button 
+              onClick={() => {
+                onAuthClick();
+                setIsMenuOpen(false);
+              }}
+              className="w-full mt-4 mx-4 bg-gradient-to-r from-pink-400 to-coral-400 text-white py-2 rounded-full font-medium hover:scale-105 transition-transform duration-300 font-montserrat"
+            >
+              Login/SignUp
             </button>
           </div>
         )}

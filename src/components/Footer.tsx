@@ -38,7 +38,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
               <div className="bg-gradient-to-r from-pink-300 to-coral-400 p-2 rounded-full">
                 <Shield className="h-6 w-6 text-white" />
               </div>
-              <span className="text-xl font-bold text-gray-800">SafeGuard</span>
+              <span className="text-xl font-bold text-gray-800">Comrade</span>
             </div>
             <p className="text-gray-600 leading-relaxed">
               Empowering women with cutting-edge safety technology. Stay connected, stay safe, stay confident.
@@ -135,7 +135,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
         <div className="border-t border-pink-100 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-1 text-gray-600 mb-4 md:mb-0">
-              <span>&copy; 2024 SafeGuard. Made with</span>
+              <span>&copy; 2025 Comrade. Made with</span>
               <Heart className="h-4 w-4 text-pink-400 fill-current" />
               <span>for women's safety</span>
             </div>
